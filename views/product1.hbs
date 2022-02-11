@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Card/Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    
+    <div class = "card-wrapper">
+      <div class = "card">
+        <!-- card left -->
+        <div class = "product-imgs">
+          <div class = "img-display">
+            <div class = "img-showcase">
+              <img src = "../images/crocinmain.png" alt = "medicine image">
+              <!--<img src = "p1.jpg" alt = "shoe image">
+              <img src = "p1.jpg" alt = "shoe image">
+              <img src = "p1.jpg" alt = "shoe image">-->
+            </div>
+          </div>
+          <!--<div class = "img-select">
+            <div class = "img-item">
+              <a href = "#" data-id = "1">
+                <img src = "p1.jpg" alt = "shoe image">
+              </a>
+            </div>
+            <div class = "img-item">
+              <a href = "#" data-id = "2">
+                <img src = "p1.jpg" alt = "shoe image">
+              </a>
+            </div>
+            <div class = "img-item">
+              <a href = "#" data-id = "3">
+                <img src = "p1.jpg" alt = "shoe image">
+              </a>
+            </div>
+            <div class = "img-item">
+              <a href = "#" data-id = "4">
+                <img src = "p1.jpg" alt = "shoe image">
+              </a>
+            </div>
+          </div>-->
+        </div>
+        <!-- card right -->
+        <div class = "product-content">
+          <h2 class = "product-title">CROCIN ADVANCE</h2>
+          <a href = "#" class = "product-link"></a>
+          <!---<div class = "product-rating">
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star-half-alt"></i>
+            <span>4.7(21)</span>
+          </div>-->
+
+          <div class = "product-price">
+            <p class = "last-price">Old Price: <span>Rs 125.00</span></p>
+            <p class = "new-price">New Price: <span> Rs 120.00 (5%)</span></p>
+          </div>
+
+          <div class = "product-detail">
+            <h2>about this medicine </h2>
+            <p>Crocin Advance Tablet is a drug that is used for pain relief and fever control. It is used for the treatment of a variety of disorders,
+             including headache, body ache, toothache, and the common cold. 
+              It functions by blocking the release of certain chemicals that are responsible for pain and fever.</p>
+            <p></p>
+            <ul>
+             <!---- <li>Color: <span>Black</span></li>-->
+              <li>Available: <span>in stock</span></li>
+              <li>Category: <span>Antipyretic</span></li>
+              <li>Shipping Area: <span>All over the world</span></li>
+              <li>Shipping Fee: <span>Free</span></li>
+            </ul>
+          </div>
+
+          <div class = "purchase-info">
+            <input type = "number" min = "0" value = "1">
+            <button type = "button" class = "btn"><a href="/cart">
+              Add to Cart <i class = "fas fa-shopping-cart"></i></a>
+            </button>
+            <!---<button type = "button" class = "btn">Compare</button>--->
+          </div>
+
+          <!--<div class = "social-links">
+            <p>Share At: </p>
+            <a href = "#">
+              <i class = "fab fa-facebook-f"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-twitter"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-instagram"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-whatsapp"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-pinterest"></i>
+            </a>
+          </div>-->
+        </div>
+      </div>
+    </div>
+    {{!--  --}}
+   {{# each products }}
+<div class="row">
+    {{# each this }}
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <a href="/product1" class="btn"><img src="{{this.imagePath}}" alt="..." class="img-responsive"></a>
+            <div class="caption">
+
+                <h4 class="text-left">In stock</h3>
+                <h4 class="text-left">5% off</h3>
+                <h3 class="text-center">{{ this.Name }}</h3>
+                <p class="description">{{ this.description }}</p>
+                <h4 class="text-left"> Quantity : {{ this.Quantity }}</h3>
+
+                 <div class="price pull-left"> Prescription : {{ this.prescription }}</div>
+                 <br><br>
+                <div class="clearfix">
+
+                    <div class="price pull-left">Rs. {{ this.price }}</div><br>
+                    
+
+
+                     {{# if this.prescription:Not-Required }}
+                        <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Cart</a>
+                       
+                        
+                       
+                        {{ else }}
+                        
+                         <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Cart</a> 
+                      
+     {{/if}}
+                    {{!-- <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Cart</a>  --}}
+                    {{!--  --}}
+                    {{!-- <a href="/image/">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> upload
+                       
+                    </a> --}}
+                    {{!--  --}}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}
+</div>
+{{!--  --}}
+
+
+
+    
+    <script src="script.js"></script>
+  </body>
+</html>

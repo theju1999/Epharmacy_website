@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED 24/7</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="stylesheets/home.css">
+    
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <!--<div class="content">
+        <h3>TRUSTED MEDICINES</h3>
+        <span> DELIVERED AT YOUR DOORSTEP </span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum ut minus corrupti dolorum dolore assumenda iste voluptate dolorem pariatur.</p>
+        <a href="#" class="btn" >Order now</a>
+    </div>-->
+    
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span> about </span> us </h1>
+
+    <div class="row">
+
+        <div class="video-container">
+            <video src="images/medicine.mp4"></video>
+            <h3>best medicine sellers</h3>
+        </div>
+
+        <div class="content">
+            <h3>why choose us?</h3>
+            <p>Med 24/7 is a fast-growing online pharmacy that empowers people to buy medicines and other health 
+              care products from the convenience of home 24/7 and 365 days a year.</p>
+            
+            <a href="/aboutus" class="btn">learn more</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <img src="images/icon-1.png" alt="">
+        <div class="info">
+            <h3>free delivery</h3>
+            <span>on ₹1000 and above orders</span>
+        </div>
+    </div>
+
+    
+
+    <div class="icons">
+        <img src="images/icon-3.png" alt="">
+        <div class="info">
+            <h3>offers</h3>
+            <span>5% off on all medicines</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="images/icon-4.png" alt="">
+        <div class="info">
+            <h3>secure paymens</h3>
+            <span>protected by paypal</span>
+        </div>
+    </div>
+   
+</section>
+
+<!-- icons section ends -->
+
+<!-- prodcuts section starts  -->
+
+
+       <!--- <div class="box">
+            <span class="discount">-18%</span>
+            <div class="image">
+                <img src="images/img-7.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">More</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="images/img-8.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">More</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="images/img-9.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">More</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>flower pot</h3>
+                <div class="price"> $12.99 <span>$15.99</span> </div>
+            </div>
+        </div>-->
+
+    </div>
+
+</section>
+
+<!-- prodcuts section ends -->
+
+<!-- review section starts  -->
+
+
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+<h1 class="heading"> <span>Most Sold</span> Products </h1>
+
+<div class="container">
+
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-4 col-sm-offset-3">
+        <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+            {{ successMsg }}
+        </div>
+    </div>
+</div>
+
+{{# each products }}
+<div class="row">
+    {{# each this }}
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          {{!-- <a href="/product1" class="btn"> </a> --}}
+          <img src="{{this.imagePath}}" alt="..." class="img-responsive">
+            <div class="caption">
+
+                <h4 class="text-left">In stock</h3>
+                <h4 class="text-left">5% off</h3>
+                <h3 class="text-center">{{ this.Name }}</h3>
+                <p class="description">{{ this.description }}</p>
+                <h4 class="text-left"> Quantity : {{ this.Quantity }}</h3>
+
+                 <div class="price pull-left"> Prescription : {{ this.prescription }}</div>
+                 <br><br>
+                <div class="clearfix">
+
+                    <div class="price pull-left">Rs. {{ this.price }}</div><br>
+                    
+
+
+                     {{# if this.prescription:Not-Required }}
+                        <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Cart</a>
+                       
+                        
+                       
+                        {{ else }}
+                        
+                         <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Cart</a> 
+                      
+     {{/if}}
+                    {{!-- <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Add to Cart</a>  --}}
+                    {{!--  --}}
+                    {{!-- <a href="/image/">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> upload
+                       
+                    </a> --}}
+                    {{!--  --}}
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}
+</div>
+<section class="review" id="review">
+
+<h1 class="heading"> customer's <span>review</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p>
+          This is really a good website for medicines</p>
+            <div class="user">
+            <img src="images/customer1.jpg" alt="">
+            <div class="user-info">
+                <h3>Laura deo</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p>We get all kinds of medicines here.Really happy to find this</p>
+            <div class="user">
+            <img src="images/customer2.jpg" alt="">
+            <div class="user-info">
+                <h3>john deo</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p>Very satisfying experience,really a good website for pharmacy</p>
+          <div class="user">
+            <img src="images/customer3.jpg" alt="">
+            <div class="user-info">
+                <h3>Mary </h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+
+</div>
+    
+</section>
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span> contact </span> us </h1>
+
+    <div class="row">
+
+        <form action="">
+            <input type="text" placeholder="name" class="box">
+            <input type="email" placeholder="email" class="box">
+            <input type="number" placeholder="number" class="box">
+            <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+
+        <div class="image">
+            <img src="images/contact-img.svg" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+{{!-- 
+footer section    --}}
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+
+
+<html>
+    <head>
+
+<style>
+    b{
+        font-size: 20px;
+       
+    }
+</style>
+
+</head>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            {{!-- <b>MED 24/7</b>   --}}
+             <img src="/images/logomain2.png"><a class="navbar-brand" href="/"></a></img>
+         
+        </div>
+        <div class="text-left" style="padding:80px 5px 5px 10px;">
+          <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+                <input class="form-control mr-sm-2" type="text" name="dsearch" placeholder="Search" style="height:60px;width:300px;align:center;">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+              </form>
+     </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           
+         
+      
+ 
+      
+            <ul class="nav navbar-nav navbar-right">
+ 
+              
+               
+                <li>
+                    <a href="/">
+                        <i class="fas fa-home" aria-hidden="true"></i><b> Home Page</b>
+                       
+                    </a>
+
+                </li>
+                <li><a href="/image/">
+                        <i class="fas fa-file-upload" aria-hidden="true"></i><b> upload</b>
+                       
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/shopping-cart/">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><b> Shopping Cart</b>
+                        <span class="badge">{{session.cart.totalQty}}</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> <b>User Menu</b> <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+
+                        
+                        {{# if login }}
+                        <li><a href="/user/profile">User Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/user/logout">Sign Out</a></li>
+                        {{ else }}
+                        <li><a href="/user/signup">Create an Account</a></li>
+                        <li><a href="/user/signin">Sign In</a></li>
+                        {{/if}}
+
+
+
+
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+</nav>
+<script type="text/javascript" src="javascripts/search.js"></script>
+
+ 
+    <script type="text/javascript" src="javascripts/searchsuggestions.js"></script>
+     </html>
